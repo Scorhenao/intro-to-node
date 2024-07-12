@@ -1,4 +1,3 @@
-const { log } = require("console");
 const http = require("http");
 
 const server = http.createServer((req, res) => {
@@ -6,7 +5,9 @@ const server = http.createServer((req, res) => {
   res.end("Hello, World!");
 });
 
-server.listen(3000, "Esto es un mensaje de prueba", () => {
-  console.log("Server running at http://localhost:3000/");
-});
+const hostname = "localhost";
+const port = 3000;
 
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
